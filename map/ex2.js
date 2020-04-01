@@ -42,7 +42,7 @@ Expected OUTPUT for this sample
     * "FOOD is not suitable for vegetarians" if the `isVegetarian` attribute is false
     (replace FOOD with the `food` attribute) */
 
-function getFoodCategories(foods) {
+/* function getFoodCategories(foods) {
   return foods.map(isVeg => {
     if(isVeg.isVegetarian) {
       return `${isVeg.food} is suitable for vegetarians`;
@@ -50,8 +50,11 @@ function getFoodCategories(foods) {
       return `${isVeg.food} is not suitable for vegetarians`;
     }
   });
-};
+}; */
 
+function getFoodCategories(foods) {
+  return foods.map(isVeg => isVeg.isVegetarian ? `${isVeg.food} is suitable for vegetarians` : `${isVeg.food} is not suitable for vegetarians`)
+}
 
 // DON'T TOUCH THIS!
 module.exports = getFoodCategories;
