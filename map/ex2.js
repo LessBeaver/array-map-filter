@@ -1,17 +1,5 @@
 /* Array.prototype.map - Exercise 2
 
-* Write the CONTENTS of the `getFoodCategories` function
-* It receives an array of OBJECTS as an argument
-* Each object in this array has two attributes:
-    `food` is the name of a food product
-    `isVegetarian` is a boolean, indicating if this product is suitable for vegetarians
-* Using map, `getFoodCategories` must return an array of STRINGS.
-* For each element (object) of the input `foods` array, the corresponding element in the
-  output array can be computed this way:
-    * "FOOD is suitable for vegetarians" if the `isVegetarian` attribute is true
-    * "FOOD is not suitable for vegetarians" if the `isVegetarian` attribute is false
-    (replace FOOD with the `food` attribute)
-
 Sample foods array, i.e. INPUT:
   [
     {
@@ -42,9 +30,27 @@ Expected OUTPUT for this sample
 
 */
 
-function getFoodCategories(foods) {
-}
+/* * Write the CONTENTS of the `getFoodCategories` function
+* It receives an array of OBJECTS as an argument
+* Each object in this array has two attributes:
+    `food` is the name of a food product
+    `isVegetarian` is a boolean, indicating if this product is suitable for vegetarians
+* Using map, `getFoodCategories` must return an array of STRINGS.
+* For each element (object) of the input `foods` array, the corresponding element in the
+  output array can be computed this way:
+    * "FOOD is suitable for vegetarians" if the `isVegetarian` attribute is true
+    * "FOOD is not suitable for vegetarians" if the `isVegetarian` attribute is false
+    (replace FOOD with the `food` attribute) */
 
+function getFoodCategories(foods) {
+  return foods.map(isVeg => {
+    if(isVeg.isVegetarian) {
+      return `${isVeg.food} is suitable for vegetarians`;
+    } else {
+      return `${isVeg.food} is not suitable for vegetarians`;
+    }
+  });
+};
 
 
 // DON'T TOUCH THIS!
